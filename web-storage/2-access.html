@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Storage</title>
+    <script src="./2-access.js"></script>
+</head>
+
+<body>
+    <p>
+        <label for="key-text"></label>
+        <input type="text" id="key-text">
+    </p>
+    <p>
+        <label for="value-text"></label>
+        <input type="text" id="value-text">
+    </p>
+
+    <button onclick="storage(1)">set item</button>
+    <button onclick="storage(2)">get item</button>
+    <button onclick="storage(3)">remove item</button>
+    <button onclick="storage(4)">clear all</button>
+
+    <!-- <button onclick="set()">set item</button>
+    <button onclick="get()">get item</button>
+    <button onclick="remove()">remove item</button>
+    <button onclick="clear()">clear all</button> -->
+
+    <script>
+        function storage(f) {
+            // const s = sessionStorage;
+            const s = localStorage;
+
+            const key = document.querySelector('#key-text').value;
+            const val = document.querySelector('#value-text').value;
+
+            switch (f) {
+                case 1:
+                    s.setItem(key, val);
+                    break;
+                case 2:
+                    alert(s.getItem(key));
+                    break;
+                case 3:
+                    s.removeItem(key);
+                    break;
+                case 4:
+                    s.clear();
+                    break;
+                default:
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage</title>
+</head>
+
+<body>
+    <!-- DOM 0 級 事件 -->
+    <button onclick="session()">session storage</button>
+    <button onclick="local()">local storage</button>
+
+
+    <script>
+        function session() {
+            if (sessionStorage['username'] == null) {
+                const name = prompt('Enter your name.');
+                sessionStorage['username'] = name;
+            } else {
+                console.log(sessionStorage['username']);
+            }
+        }
+
+        function local() {
+            if (localStorage['location'] == null) {
+                const from = prompt('Enter your location.');
+                localStorage['location'] = from;
+            } else {
+                console.log(localStorage['location']);
+            }
+        }
+    </script>
+</body>
+
+</html>
